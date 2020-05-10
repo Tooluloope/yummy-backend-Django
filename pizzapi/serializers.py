@@ -1,14 +1,17 @@
 from rest_framework import serializers
 from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
 
-from .models import Pizza, Order
+
+
+from .models import Pizza, Order, UserProfile
 
 class PizzaSerializer(serializers.HyperlinkedModelSerializer):
     id = serializers.ReadOnlyField()
     class Meta:
         model = Pizza
         fields = ('id', 'url', 'name','price', 'desc')
+
+
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
     id = serializers.ReadOnlyField()
@@ -18,27 +21,29 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ('id', 'username', 'email')
+        model = UserProfile
+        fields = ('id', 'username', 'email', 'fullname')
 
 
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ('id', 'username', 'email', 'password')
+        model = UserProfile
+        fields = ('id', 'username', 'email', 'password','fullname')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        user = User.objects.create_user(
-            validated_data['username'],
+        user = UserProfile.objects.create_user(
             validated_data['email'],
+             validated_data['fullname'],
+            validated_data['username'],
             validated_data['password']
+           
         )
         return user
 
 
 class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField()
+    email = serializers.CharField()
     password = serializers.CharField()
 
     def validate(self, data):

@@ -61,6 +61,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'pizza.urls'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'knox.auth.TokenAuthentication'
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        
+    )
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -78,6 +87,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'pizza.wsgi.application'
+
+AUTH_USER_MODEL = 'pizzapi.UserProfile'
 
 
 # Database
@@ -144,12 +155,12 @@ CORS_ORIGIN_WHITELIST = ['http://mypizzapps.herokuapp.com','http://localhost:300
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'build/static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'build/static'),
+# ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
