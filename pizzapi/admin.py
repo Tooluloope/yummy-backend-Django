@@ -5,4 +5,5 @@ from .models import Pizza,Order, UserProfile
 # Register your models here.
 admin.site.register(Pizza)
 admin.site.register(Order)
+admin.site.register(UserProfile)
 
