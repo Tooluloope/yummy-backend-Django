@@ -39,3 +39,4 @@ lib64
 _pycache__/
 *.py[cod]
 *$py.class
+/pizzapi/migrations
