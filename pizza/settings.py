@@ -91,6 +91,12 @@ WSGI_APPLICATION = 'pizza.wsgi.application'
 AUTH_USER_MODEL = 'pizzapi.UserProfile'
 
 
+#Authentication backends
+AUTHENTICATION_BACKENDS = (
+        'django.contrib.auth.backends.ModelBackend',
+    )
+
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 

@@ -67,7 +67,7 @@ class UserProfile(AbstractBaseUser):
     username = models.CharField(max_length=60, unique=True,blank=False, null=False)
     email = models.EmailField(max_length=254, unique=True,blank=False, null=False)
     is_admin = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
