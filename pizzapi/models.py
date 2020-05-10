@@ -28,7 +28,7 @@ class Order(models.Model):
 
 
 class MyUserManager(BaseUserManager):
-
+    
     def create_user(self, email, fullname, username, password=None):
         if not email:
             raise ValueError('Users must have an email address')
@@ -62,11 +62,11 @@ class MyUserManager(BaseUserManager):
         return user
 
 
-
 class UserProfile(AbstractBaseUser):
     fullname = models.CharField(max_length = 50, blank=False, null=False)
     username = models.CharField(max_length=60, unique=True,blank=False, null=False)
     email = models.EmailField(max_length=254, unique=True,blank=False, null=False)
+
 
     USERNAME_FIELD = 'email'
     
@@ -81,5 +81,8 @@ class UserProfile(AbstractBaseUser):
 
     def has_module_perms(self, app_label):
         return True
+
+
+
 
 
