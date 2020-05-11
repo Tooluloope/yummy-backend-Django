@@ -21,6 +21,11 @@ from rest_framework import routers
 from knox.views import LogoutView
 from django.views.generic import TemplateView
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Yummy Pizza API')
+
+
 router = routers.DefaultRouter()
 router.register(r'pizzas', PizzaViewSet)
 router.register(r'orders', OrderViewSet)
@@ -36,4 +41,5 @@ urlpatterns = [
     path('auth/login', LoginAPIView.as_view()),
     path('auth/logout', LogoutView.as_view(), name='knox_logout'),
     path('api/', include(router.urls)),
+    path('api/doc', schema_view)
 ]

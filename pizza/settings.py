@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'pizzapi',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,9 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PERMISSION_CLASSES': (
         
-    )
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+
 }
 
 TEMPLATES = [
@@ -117,6 +120,8 @@ DATABASES = {
 
     }
 }
+
+
 
 
 # Password validation
