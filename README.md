@@ -24,5 +24,5 @@ e) run `python manage.py runserver`
 then Push the new branch to heroku.
 `git push heroku new_branch:master`
 
-heroku restart
+`heroku restart`
 
