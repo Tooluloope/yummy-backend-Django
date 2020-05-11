@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Django and setup to be deployed on Heroku.
+This project was bootstrapped  Django and setup to be deployed on Heroku.
 
 ## Available Scripts
 
@@ -24,5 +24,5 @@ e) run `python manage.py runserver`
 then Push the new branch to heroku.
 `git push heroku new_branch:master`
 
-heroku restart
+`heroku restart`
 
