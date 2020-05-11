@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'knox',
     'pizzapi',
     'corsheaders',
+    'drf_yasg',
     'rest_framework_swagger',
 ]
 
@@ -76,7 +77,7 @@ REST_FRAMEWORK = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'build')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
