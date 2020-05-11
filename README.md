@@ -29,3 +29,5 @@ then Push the new branch to heroku.
 
 ## All API routes are documented and can be seen from [here](https://yummy-pizzapi.herokuapp.com/api/swagger/doc) or [here](https://yummy-pizzapi.herokuapp.com/api/redoc/doc)
 
+![api image](api.png)
+
