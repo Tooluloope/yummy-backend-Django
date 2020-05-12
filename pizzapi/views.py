@@ -25,7 +25,7 @@ class OrderViewSet(viewsets.ModelViewSet):
 
     serializer_class = OrderSerializer
 
-    queryset = Order.objects.all().order_by('created_at')
+    queryset = Order.objects.all().order_by('-created_at')
 
 
 class UserAPIView(generics.RetrieveAPIView):
