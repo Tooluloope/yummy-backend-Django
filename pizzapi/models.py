@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-import uuid   
 
 
 
@@ -16,7 +15,7 @@ class Pizza(models.Model):
 
 
 class Order(models.Model):
-    uid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=60)
     email = models.CharField(max_length=150)
     address = models.CharField(max_length=150)
