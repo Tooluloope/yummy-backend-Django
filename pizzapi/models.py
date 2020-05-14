@@ -16,6 +16,7 @@ class Pizza(models.Model):
 
 class Order(models.Model):
     id = models.AutoField(primary_key=True)
+
     name = models.CharField(max_length=60)
     email = models.CharField(max_length=150)
     address = models.CharField(max_length=150)
